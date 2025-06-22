@@ -1,0 +1,28 @@
+# .gitignore – 프로젝트 보안 및 무결성을 위한 설정
+
+# Python 관련
+__pycache__/
+*.py[cod]
+*.pyo
+
+# 환경 파일
+.env
+.env.*
+
+# 모델 파일 및 캐시
+*.pkl
+*.joblib
+
+# DB 파일
+*.db
+
+# 리포트 및 로그
+/reports/
+*.log
+
+# VS Code 설정
+.vscode/
+
+# 기타 백업/OS 파일
+.DS_Store
+Thumbs.db
