@@ -1,0 +1,86 @@
+#  AI 기반 DDoS 탐지 시스템
+
+##  프로젝트 설명
+- 실시간 트래픽을 분석하여 DDoS 공격 여부를 탐지하고, 위험도를 계산합니다.
+- AI 기반의 분류 모델(이진 + 다중)을 통해 공격 유형을 판단하고, 대응 가이드를 제공합니다.
+- WebSocket 경고, PDF 리포트, 관리자 기능까지 포함된 백엔드 시스템입니다.
+
+---
+
+##  프로젝트 구조 예시
+```
+/ddos-detection
+├── main.py                    # FastAPI 백엔드 API
+├── realtime_sniffer.py        # Scapy 기반 실시간 탐지기
+├── dashboard.py               # Streamlit 대시보드 (선택)
+├── risk.py                    # 위험도 계산 모듈
+├── recommendation.py          # 대응 가이드 추천
+├── database.py                # DB 연동 모듈
+├── requirements.txt           # 패키지 목록
+├── .env                       # 환경 변수 (Git 제외!)
+├── .env.example               # 템플릿용 환경변수 파일
+└── README.md                  # 이 문서
+```
+
+---
+
+## 🔧 실행 전 준비
+### 1. 가상환경 생성 및 패키지 설치
+```bash
+python -m venv venv
+venv\Scripts\activate     # Windows
+# source venv/bin/activate # Mac/Linux
+pip install -r requirements.txt
+```
+
+### 2. 환경변수 설정
+`.env.example` 파일을 `.env`로 복사하고 항목을 채워주세요:
+```
+SMTP_EMAIL=your_email@gmail.com
+SMTP_PASSWORD=your_app_password
+SECRET_KEY=your_secret
+EMAIL=test@email.com
+PASSWORD=test_password
+API_URL=http://127.0.0.1:8000
+```
+
+---
+
+## 🚀 실행 방법
+
+### 1. FastAPI 서버 실행
+```bash
+uvicorn main:app --reload
+```
+
+### 2. 실시간 탐지기 실행 (선택)
+```bash
+python realtime_sniffer.py
+```
+
+### 3. Streamlit 대시보드 실행 (선택)
+```bash
+streamlit run dashboard.py
+```
+
+---
+
+## ✅ 포함 기능 요약
+- AI 모델 기반 DDoS 탐지 (이진/다중 분류)
+- 위험도 점수 계산 + 대응 가이드 제공
+- WebSocket 실시간 경고
+- PDF 리포트 생성 및 다운로드
+- 이메일 경고 전송
+- 관리자 기능: 유저 등록, 모델 리로딩, 통계 API
+
+---
+
+## 💡 주의사항
+- `.env` 파일은 절대 Git에 업로드하지 마세요
+- `logs.db`도 운영환경에서는 백업 또는 외부 DB로 교체 권장
+
+---
+
+## 👨‍💻 문의 & 협업
+- 유지보수 담당자: [cccohdlakk339@naver.com]
+- 협업 제안: Issue 등록 또는 이메일 연락 주세요!
