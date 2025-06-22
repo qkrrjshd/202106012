@@ -1,0 +1,23 @@
+# requirements.txt – 버전 고정 (2025‑05 기준)
+
+fastapi==0.111.0
+uvicorn[standard]==0.29.0
+sqlalchemy==2.0.30
+python-dotenv==1.0.1
+passlib[bcrypt]==1.7.4
+python-jose[cryptography]==3.3.0
+pydantic==2.7.1
+requests==2.32.3
+scapy==2.5.0
+fpdf==1.7.4
+python-multipart==0.0.9
+email-validator==2.1.1
+joblib==1.4.2
+geoip2==4.8.0
+tenacity==8.3.0
+PyYAML==6.0.2
+streamlit==1.35.0
+pydeck==0.8.0b4   # 지도 시각화를 위한 필수 패키지
+matplotlib==3.8.4
+seaborn==0.13.2
+geocoder>=1.38.1
